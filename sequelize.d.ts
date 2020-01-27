@@ -1,7 +1,7 @@
 import 'sequelize';
 
 declare module 'sequelize' {
-    interface ManyToManyOptions {
-        sourceKey?: string;
+    interface CreateOptions {
+        newKey?: string;
     }
 }

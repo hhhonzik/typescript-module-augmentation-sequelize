@@ -1,7 +1,19 @@
-import { ManyToManyOptions, AssociationOptions } from 'sequelize';
+import { CreateOptions, Model } from 'sequelize';
 
-const options: AssociationOptions = {};
+// this works
+const testDirect: CreateOptions = {
+  newKey: 'this works'
+}
 
-const optionsToo: ManyToManyOptions = {
-    sourceKey: 'foo',
-};
+
+class TestModel extends Model {
+
+}
+
+
+// this doesn't
+TestModel.create({
+
+}, {
+    newKey: 'this is still broken'
+});
