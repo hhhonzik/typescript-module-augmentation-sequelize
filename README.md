@@ -30,3 +30,8 @@ index.ts:18:5 - error TS2345: Argument of type '{ newKey: string; }' is not assi
 # Steps to repeat
     npm install
     node_modules/.bin/tsc
+
+
+# Fix
+
+Fix is rather simple, because Typescript is unable to apply module augmentation on anything that is re-exported with a star, we just export and write all of them by hand.
